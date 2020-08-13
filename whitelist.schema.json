@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "$id": "whitelist.schema.json",
+    "title": "accounts",
+    "type": "array",
+    "items": {       
+        "type": "object",
+        "properties": {
+            "accountName": {
+                "type": "string",
+                "pattern": "^(lz[0-9]{3}(?:nonprod|prod))$"
+            },
+            "cloudProvider": {
+                "type": "string", 
+                "pattern": "^((?:AWS|AZURE))$"
+            },
+            "VPC": {
+                "type": "string",
+                "pattern": "^((?:app|tooling))$"
+            },
+            "isolated": {
+                "type": "boolean"
+            },
+            "expiry": {
+                "type": "string",
+                "pattern": "^(0[1-9]|[12][0-9]|3[01])[- \/.](0[1-9]|1[012])[- \/.]20\\d\\d$"
+            },
+            "whitelist": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                },
+                "minItems": 1,
+                "uniqueItems": true
+            }
+        }
+    },
+    "required": [ "accountName", "cloudProvider", "VPC", "isolated", "whitelist"]
+}

@@ -1,0 +1,5 @@
+[
+    {"accountName": "lz123nonprod", "cloudProvider": "AWS",  "VPC": "app", "isolated": false, "whitelist": ["www.google.com", "cisco.com"]},
+    {"accountName": "lz123prod", "cloudProvider": "AWS",  "VPC": "app", "isolated": true, "whitelist": ["www.google.com", "cisco.com"]},
+    {"accountName": "lz314nonprod", "cloudProvider": "AWS",  "VPC": "app", "isolated": true, "whitelist": [".google.com", ".cisco.com"], "expiry": "22/12/2021"}
+]
